@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Available-twitter-handles by NicholasRBowers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Available-twitter-handles</h1>
+      <h2 class="project-tagline">Script using brute force to see which Twitter usernames are available.</h2>
+      <a href="https://github.com/NicholasRBowers/Available-Twitter-Handles" class="btn">View on GitHub</a>
+      <a href="https://github.com/NicholasRBowers/Available-Twitter-Handles/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/NicholasRBowers/Available-Twitter-Handles/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="available-twitter-handles" class="anchor" href="#available-twitter-handles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available Twitter Handles</h1>
+
+<p><em>Adapted from <a href="https://github.com/x">x's</a> <a href="https://github.com/x/Twitter-Brute-Force">Twitter Brute Force</a>.</em></p>
+
+<hr>
+
+<p><strong>Forked by</strong>: <a href="http://twitter.com/NicholasRBowers">@NicholasRBowers</a></p>
+
+<p><strong>Original Author</strong>: <a href="https://github.com/x/Twitter-Brute-Force">Twitter Brute Force</a> by <a href="https://github.com/x">Devon Peticolas</a> @ Chartbeat</p>
+
+<hr>
+
+<p>Available Twitter Handles is a little script that takes a new-line-separated dictionary and hammers the fuck out Twitter to find which words are available as twitter usernames.</p>
+
+<p>To avoid rate limiting, this script does <strong>not</strong> use the Twitter REST API, it instead queries for the presumed profile's status code. As a result it generates false-positives on reserved account names.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+
+<p>Clone the repository and install the dependencies.</p>
+
+<pre><code>git clone git@github.com:NicholasRBowers/Available-Twitter-Handles.git twitter-handles
+cd twitter-handles
+npm install
+</code></pre>
+
+<h3>
+<a id="brutejs" class="anchor" href="#brutejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>brute.js</h3>
+
+<p>The main script, brute.js takes multiple dictionaries as arguments.</p>
+
+<p>Available handles go to a file called <code>available</code>.</p>
+
+<pre><code>node brute.js dictionary1 dictionary2 dictionary3
+</code></pre>
+
+<h3>
+<a id="generatejs" class="anchor" href="#generatejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>generate.js</h3>
+
+<p>The other script, generate.js generates all permutations of the alphabet up to k characters.</p>
+
+<p>Takes some number k and the output file.</p>
+
+<pre><code>node generate.js 3 permutations3
+</code></pre>
+
+<p><em>note that this is O(n^k) runtime</em></p>
+
+<h3>
+<a id="brute_namesjs" class="anchor" href="#brute_namesjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>brute_names.js</h3>
+
+<p>A name generation script was further added by <a href="https://github.com/FlavSF">FlavFS</a>. It requires a <code>first.csv</code> and <code>last.csv</code> to be in the immediate directory.</p>
+
+<h2>
+<a id="dictionaries" class="anchor" href="#dictionaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dictionaries</h2>
+
+<p>I've pushed the dictionaries that I've been using to a separate repo called <a href="https://github.com/NicholasRBowers/Available-Twitter-Handles">Brute-Force-Dictionaries</a>.</p>
+
+<h2>
+<a id="results" class="anchor" href="#results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results</h2>
+
+<p>In case you're interested, here are some results.</p>
+
+<p>All available 4-letter Twitter handles with no more than two consonants next to each other (pronounceable?).</p>
+
+<p><a href="http://peticol.as/twitter-handles/4-letter-ok-sounding.txt">http://peticol.as/twitter-handles/4-letter-ok-sounding.txt</a></p>
+
+<p>251,453 English words currently available from brute-forcing the <a href="http://www.codehappy.net/wordlist.htm">RIDYHEW</a> list.</p>
+
+<p><a href="http://peticol.as/twitter-handles/english-words.txt">http://peticol.as/twitter-handles/english-words.txt</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/NicholasRBowers/Available-Twitter-Handles">Available-twitter-handles</a> is maintained by <a href="https://github.com/NicholasRBowers">NicholasRBowers</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-62263866-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
+
