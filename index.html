@@ -13,14 +13,14 @@
     <section class="page-header">
       <h1 class="project-name">Available-twitter-handles</h1>
       <h2 class="project-tagline">Script using brute force to see which Twitter usernames are available.</h2>
-      <a href="https://github.com/NicholasRBowers/Available-Twitter-Handles" class="btn">View on GitHub</a>
-      <a href="https://github.com/NicholasRBowers/Available-Twitter-Handles/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/NicholasRBowers/Available-Twitter-Handles/tarball/master" class="btn">Download .tar.gz</a>
+      <a href="https://github.com/NicholasRBowers/Available-Handles" class="btn">View on GitHub</a>
+      <a href="https://github.com/NicholasRBowers/Available-Handles/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/NicholasRBowers/Available-Handles/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
       <h1>
-<a id="available-twitter-handles" class="anchor" href="#available-twitter-handles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available Twitter Handles</h1>
+<a id="available-handles" class="anchor" href="#available-handles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available Handles</h1>
 
 <p><em>Adapted from <a href="https://github.com/x">x's</a> <a href="https://github.com/x/Twitter-Brute-Force">Twitter Brute Force</a>.</em></p>
 
@@ -32,9 +32,9 @@
 
 <hr>
 
-<p>Available Twitter Handles is a little script that takes a new-line-separated dictionary and hammers the fuck out Twitter to find which words are available as twitter usernames.</p>
+<p>Available Handles is a little script that takes a new-line-separated dictionary and hammers the fuck out Twitter or GitHub to find which words are available as usernames.</p>
 
-<p>To avoid rate limiting, this script does <strong>not</strong> use the Twitter REST API, it instead queries for the presumed profile's status code. As a result it generates false-positives on reserved account names.</p>
+<p>To avoid rate limiting, this script does <strong>not</strong> use the Twitter/GitHub REST API, it instead queries for the presumed profile's status code. As a result it generates false-positives on reserved account names.</p>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
@@ -44,20 +44,22 @@
 
 <p>Clone the repository and install the dependencies.</p>
 
-<pre><code>git clone git@github.com:NicholasRBowers/Available-Twitter-Handles.git twitter-handles
-cd twitter-handles
+<pre><code>git clone git@github.com:NicholasRBowers/Available-Handles.git handles
+cd handles
 npm install
 </code></pre>
 
 <h3>
 <a id="brutejs" class="anchor" href="#brutejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>brute.js</h3>
 
-<p>The main script, brute.js takes multiple dictionaries as arguments.</p>
+<p>The main script, brute.js takes a mode and multiple dictionaries as arguments.</p>
 
-<p>Available handles go to a file called <code>available</code>.</p>
+<p>Available usernames are written to files called <code>twitter.available</code> or <code>github.available</code>.</p>
 
-<pre><code>node brute.js dictionary1 dictionary2 dictionary3
+<pre><code>node brute twitter dictionary1 dictionary2 dictionary3
 </code></pre>
+
+<p>Supported modes currently include <code>twitter</code> and <code>github</code>.</p>
 
 <h3>
 <a id="generatejs" class="anchor" href="#generatejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>generate.js</h3>
@@ -79,14 +81,14 @@ npm install
 <h2>
 <a id="dictionaries" class="anchor" href="#dictionaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dictionaries</h2>
 
-<p>I've pushed the dictionaries that I've been using to a separate repo called <a href="https://github.com/NicholasRBowers/Available-Twitter-Handles">Brute-Force-Dictionaries</a>.</p>
+<p>I've pushed the dictionaries that I've been using to a separate repo called <a href="https://github.com/NicholasRBowers/Brute-Force-Dictionaries">Brute-Force-Dictionaries</a>.</p>
 
 <h2>
 <a id="results" class="anchor" href="#results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results</h2>
 
 <p>In case you're interested, here are some results.</p>
 
-<p>All available 4-letter Twitter handles with no more than two consonants next to each other (pronounceable?).</p>
+<p>All available 4-letter Twitter usernames with no more than two consonants next to each other (pronounceable?).</p>
 
 <p><a href="http://peticol.as/twitter-handles/4-letter-ok-sounding.txt">http://peticol.as/twitter-handles/4-letter-ok-sounding.txt</a></p>
 
@@ -95,7 +97,7 @@ npm install
 <p><a href="http://peticol.as/twitter-handles/english-words.txt">http://peticol.as/twitter-handles/english-words.txt</a></p>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/NicholasRBowers/Available-Twitter-Handles">Available-twitter-handles</a> is maintained by <a href="https://github.com/NicholasRBowers">NicholasRBowers</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/NicholasRBowers/Available-Handles">Available-twitter-handles</a> is maintained by <a href="https://github.com/NicholasRBowers">NicholasRBowers</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
